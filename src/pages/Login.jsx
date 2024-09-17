@@ -1,34 +1,37 @@
-import React from 'react';
-import App from './InitLogin.jsx';
-import { PublicClientApplication, EventType } from '@azure/msal-browser';
-import { msalConfig } from '../authConfig.js';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import '../styles/index.css';
-
+import { FluentProvider, webLightTheme } from "@fluentui/react-components";
+import {  Image } from "@fluentui/react-components";
 
 function Login() {
-/**
- * MSAL should be instantiated outside of the component tree to prevent it from being re-instantiated on re-renders.
- * For more, visit: https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-react/docs/getting-started.md
- */
-const msalInstance = new PublicClientApplication(msalConfig);
 
-// Default to using the first account if no account is active on page load
-if (!msalInstance.getActiveAccount() && msalInstance.getAllAccounts().length > 0) {
-    // Account selection logic is app dependent. Adjust as needed for different use cases.
-    msalInstance.setActiveAccount(msalInstance.getActiveAccount()[0]);
+  return (
+    <FluentProvider theme={webLightTheme}>
+      <div className="App">
+        <div
+          style={{
+            display: "flex",
+            gap: 8,
+            top: "150px",
+            position: "absolute"
+          }}
+        >
+          <Image alt="ATT" src="../src/assets/att.svg" className="logo" />
+          <Image alt="Apple" src="../src/assets/apple.svg" className="logo" />
+          <Image alt="BAC" src="../src/assets/bac.png" className="logo" />
+          <Image
+            alt="Lululemon"
+            src="../src/assets/lululemon.png"
+            className="logo"
+          />
+          <Image
+            alt="Microsoft"
+            src="../src/assets/microsoft.png"
+            className="logo"
+          />
+          <Image alt="Nike" src="../src/assets/nike.svg" className="logo" />
+        </div>
+      </div>
+    </FluentProvider>
+  );
 }
 
-// Listen for sign-in event and set active account
-msalInstance.addEventCallback((event) => {
-    if (event.eventType === EventType.LOGIN_SUCCESS && event.payload.account) {
-        const account = event.payload.account;
-        msalInstance.setActiveAccount(account);
-    }
-});
-
-return (
-    <App instance={msalInstance}/>
-    );
-}
 export default Login;
