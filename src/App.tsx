@@ -66,11 +66,10 @@ const MainContent = () => {
           <Button
             shape="circular"
             size="large"
-            icon={<AddRegular />}
             className="btnNewIssue"
             onClick={handleRedirect}
           >
-            New Issue
+           <AddRegular /> New Issue
           </Button>
         </UnauthenticatedTemplate>
       </div>
