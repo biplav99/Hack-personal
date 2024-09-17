@@ -1,10 +1,10 @@
 import { MsalProvider, AuthenticatedTemplate, useMsal, UnauthenticatedTemplate } from '@azure/msal-react';
 import { Container, Button } from 'react-bootstrap';
-import { PageLayout } from './components/PageLayout';
-import { IdTokenData } from './components/DataDisplay';
-import { loginRequest } from './authConfig';
+import { PageLayout } from './PageLayout';
+import { IdTokenData } from './DataDisplay';
+import { loginRequest } from '../authConfig';
 
-import './styles/App.css';
+import '../styles/App.css';
 
 /**
  * Most applications will need to conditionally render certain components based on whether a user is signed in or not. 
@@ -55,7 +55,7 @@ const MainContent = () => {
  * PublicClientApplication instance via context as well as all hooks and components provided by msal-react. For more, visit:
  * https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-react/docs/getting-started.md
  */
-const App = ({ instance }) => {
+const InitLogin = ({ instance }) => {
     return (
         <MsalProvider instance={instance}>
             <PageLayout>
@@ -65,4 +65,4 @@ const App = ({ instance }) => {
     );
 };
 
-export default App;
+export default InitLogin;

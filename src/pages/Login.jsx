@@ -1,12 +1,12 @@
 import React from 'react';
-import { createRoot } from 'react-dom/client';
-import App from './App.jsx';
+import App from './InitLogin.jsx';
 import { PublicClientApplication, EventType } from '@azure/msal-browser';
-import { msalConfig } from './authConfig.js';
-
+import { msalConfig } from '../authConfig.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './styles/index.css';
+import '../styles/index.css';
 
+
+function Login() {
 /**
  * MSAL should be instantiated outside of the component tree to prevent it from being re-instantiated on re-renders.
  * For more, visit: https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-react/docs/getting-started.md
@@ -27,7 +27,8 @@ msalInstance.addEventCallback((event) => {
     }
 });
 
-const root = createRoot(document.getElementById('root'));
-root.render(
+return (
     <App instance={msalInstance}/>
-);
+    );
+}
+export default Login;

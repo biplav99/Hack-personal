@@ -2,12 +2,15 @@ import { FluentProvider, webLightTheme } from "@fluentui/react-components";
 import { Button, Image } from "@fluentui/react-components";
 import { AddRegular } from "@fluentui/react-icons";
 import { useNavigate } from "react-router-dom";
+import { startTransition } from 'react';
 
 function Main() {
-  let navigate = useNavigate();
+  const navigate = useNavigate();
   const routeChange = () => {
-    const path = `/page1`;
+    startTransition(() => {
+    const path = `/login`;
     navigate(path);
+  })
   };
   return (
     <FluentProvider theme={webLightTheme}>

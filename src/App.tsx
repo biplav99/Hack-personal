@@ -6,6 +6,8 @@ import Top from "./sections/top.tsx";
 
 const Home = lazy(() => import("./pages/Main"));
 const Page1 = lazy(() => import("./pages/Page1"));
+const Login = lazy(() => import("./pages/Login.jsx"));
+const DashBoard = lazy(() => import("./pages/PageLayout.jsx"));
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/page1" element={<Page1/>} />
+          <Route path="/login" element={<Login/>} />
+          <Route path="/dashboard" element={<DashBoard/>} />
         </Routes>
       </div>
     </BrowserRouter>
