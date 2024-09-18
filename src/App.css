@@ -106,3 +106,38 @@ button.btnNewIssue {
 .searchBox {
   width: 100%;
 }
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.chat-header {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.message-list {
+  flex: 1;
+  overflow-y: auto;
+  padding-bottom: 8px;
+  margin-bottom: 8px;
+  border-bottom: 1px solid #ddd;
+}
+
+.customer-message {
+  margin-bottom: 8px;
+}
+
+.send-button {
+  align-self: flex-end;
+  margin-top: 8px;
+}

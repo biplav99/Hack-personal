@@ -7,6 +7,7 @@ import { Container, Button } from "react-bootstrap";
 import { loginRequest } from './authConfig';
 import { AddRegular } from "@fluentui/react-icons";
 import { FluentProvider, webLightTheme } from "@fluentui/react-components";
+import Chat from "./Chat.tsx";
 
 const Login = lazy(() => import("./pages/Login.jsx"));
 const Dashboard = lazy(() => import("./pages/Dashboard.jsx"));
@@ -46,6 +47,7 @@ const MainContent = () => {
                         </Button>
                     </div>
                     <Dashboard/>
+                    <Chat/>
             </Container>
           ) : null}
         </AuthenticatedTemplate>
