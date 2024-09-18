@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import { FluentProvider, webLightTheme } from '@fluentui/react-components'
+import Chat from './Chat';
 import { Button } from '@fluentui/react-components'
 
 function App() {
@@ -20,6 +21,9 @@ function App() {
            Welcome to the Unified Support App. Simply click "New Issue" to get started
           </p>
           <Button shape="circular">New Issue</Button>
+            <div className="App">
+              <Chat />
+            </div>
       </div>
     </FluentProvider>
   )
