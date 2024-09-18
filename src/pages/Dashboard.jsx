@@ -7,7 +7,13 @@ const items = [
     name: "ATT",
     src: "../src/assets/att.svg",
     alt: "ATT"
+  },  
+  {
+    name: "SwiftRide",
+    src: "../src/assets/logo-bike.svg",
+    alt: "SwiftRide"
   },
+
   {
     name: "Apple",
     src: "../src/assets/apple.svg",
@@ -55,7 +61,6 @@ function Dashboard() {
               <td>{item.name}</td>
             </tr>
           ))}
-          ;
         </table>
       </div>
     </FluentProvider>
