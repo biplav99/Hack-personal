@@ -35,7 +35,7 @@ const items = [
   }
 ];
 
-function Page1() {
+function Dashboard() {
   return (
     <FluentProvider theme={webLightTheme}>
       <div className="App">
@@ -62,4 +62,4 @@ function Page1() {
   );
 }
 
-export default Page1;
+export default Dashboard;
