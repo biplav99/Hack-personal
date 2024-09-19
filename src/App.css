@@ -124,24 +124,28 @@ button.btnNewIssue {
   padding: 0px;
 }
 .chat-header {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
 }
-
+.chat-title {
+  padding: 5px 0px 0px 20px;
+  font-size: 18px;
+  margin-left: 5px;
+}
 .message-list {
   flex: 1;
-  overflow-y: auto;
   padding-bottom: 8px;
   margin-bottom: 8px;
+}
+.chat-ico {
+  margin-left: 8px;
 }
 
 .customer-message {
   margin-bottom: 15px;
-  background: #F4F6FD;
-  color: #242424;
+  background: #783EFF;
+  color: #FFFFFF;
   padding: 12px;
-  border-radius: 20px 20px 20px 0px;
+  border-radius: 20px 0px 20px 20px;
 }
 .agent-message {
   margin-bottom: 15px;
@@ -150,7 +154,9 @@ button.btnNewIssue {
   padding: 12px;
   border-radius: 20px 20px 20px 0px;
 }
-
+.agentmsg-ico {
+  margin-top: 48px;
+}
 .send-button {
   align-self: flex-end;
   margin-top: 8px;
