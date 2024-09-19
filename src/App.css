@@ -117,7 +117,7 @@ button.btnNewIssue {
 .chat-container {
   position: fixed;
   padding: 20px;
-  top: 100px;
+  top: 0px;
   left: 0px;
   height: 100%;
   width: 100%;
@@ -145,7 +145,7 @@ button.btnNewIssue {
   margin-bottom: 8px;
 }
 .chat-ico {
-  margin-left: 8px;
+  margin-left: 6px;
 }
 
 .customer-message {
@@ -171,14 +171,20 @@ button.btnNewIssue {
   align-self: flex-end;
   margin-top: 8px;
 }
+.send-button button {
+  background: none;
+  border: none;
+  padding: 0px;
+}
 .send-box-wrapper {
-  position: fixed;
   bottom: 20px;
   margin: 0;
   padding: 0px;
+  position: absolute;
 }
 .send-box-wrapper textarea {
-  width: 18rem;
+  height: 50px;
+  width: 25rem;
 }
 textarea{
   box-shadow: 0px 1px 24px 0px rgba(141, 175, 237, 0.25), 0px 0px 2px 0px rgba(98, 124, 218, 0.40);
@@ -285,5 +291,20 @@ p.providers{
 }
 .message-list {
   flex: 1;
-  padding: 1rem;
+  padding: 1rem 1rem 50px;
+  overflow: auto;
+}
+.content button{
+  background: none;
+  border: 0px;
+}
+.chat-header button{
+  border: 0px;
+  padding: 0px;
+  margin-left: -10px;
+}
+.send-button {
+  position: absolute;
+  right: 70px;
+  bottom: 10px;
 }

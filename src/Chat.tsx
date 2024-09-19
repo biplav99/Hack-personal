@@ -78,7 +78,7 @@ const Chat: React.FC = () => {
     <FluentProvider theme={webLightTheme}>
       <div className="chat-container container">
         <div className='row chat-header'>
-          <div className='col-1'>
+          <div className='col-2'>
             <Button onClick={handleGotoDashboard}>
               <Avatar name="brand avatar" image={{ src: "../src/assets/ArrowLeft.svg", }} />
             </Button>
@@ -86,7 +86,7 @@ const Chat: React.FC = () => {
           <div className='col-1 chat-ico'>
             <Avatar name="brand avatar" image={{ src: "../src/assets/logo-bike.svg", }} />
           </div>
-          <div className="col-9 chat-title">Constonso Enterprises</div>
+          <div className="col-8 chat-title">SwiftRide Enterprises</div>
         </div>
         <div className="message-list ">
           <div className="messages">
@@ -98,14 +98,16 @@ const Chat: React.FC = () => {
           </div>
         </div>
         <div className='send-box-wrapper row'>
-          <div className='col-10'>
+          <div className='col-11'>
             <Field size="small">
               <Textarea placeholder="Type a message..." value={user_input} onChange={handleMessageChange}
                 onKeyDown={handleKeyPress} rows={2} />
             </Field>
           </div>
-          <div className='col-1'>
-            <Button className="send-button" onClick={handleSendMessage}>Send</Button>
+          <div className='col-1 send-button'>
+            <Button className="" onClick={handleSendMessage}>
+            <Avatar name="brand avatar" image={{ src: "../src/assets/Iconsend.png", }} />
+            </Button>
           </div>
         </div>
       </div>
