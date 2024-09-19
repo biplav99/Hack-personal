@@ -9,8 +9,8 @@
 }
 
 .logo {
-  height: 6em;
-  padding: 1.5em;
+  height: 3.5em;
+  padding: 0.5em;
   will-change: filter;
   transition: filter 300ms;
 }
@@ -181,9 +181,10 @@ table {
 
 .content {
   background-color: #FFFFFF99;
-  border-radius: 30px;
+  border-radius: 24px;
   box-shadow: 0px 1px 24px 0px #8DAFED1F;
   margin-bottom: 10px;
+  padding: 0.7em;
 }
 
 tr td {
@@ -200,8 +201,6 @@ td img {
   width: 396px;
   height: 56px;
   gap: 0px;
-  box-shadow: 0px 0px 2px 0px #627CDA66;
-  box-shadow: 0px 1px 24px 0px #8DAFED40;
   border-radius: 4px;
   padding: 8px 12px 8px 12px !important;
 }
@@ -222,11 +221,13 @@ td img {
 }
 .brandname {
   color: #3E2C69;
-  font-weight: bold;
-  font-size: 20px;
   padding: 15px 10px 10px 10px;
+  margin: 0 auto;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 28px;
+  letter-spacing: -0.25999999046325684px;
   text-align: center;
-  margin-left: 15px;
 }
 .nav-logo{
   border-radius: 50%;
@@ -249,3 +250,23 @@ td img {
   padding: 10px 0px;
 }
 /* by shivangi ends here */
+p.providers{
+  color: #6B779A;
+  font-size: 15px;
+  font-weight: 600;
+}
+.App .fui-Input{
+  border-radius: 100px;
+  width: 90%;
+  border-bottom: 0px;
+  position: fixed;
+  top: 90px;
+}
+.App table tr td:nth-child(2){
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 25px;
+  letter-spacing: -0.44999998807907104px;
+  text-align: left;
+  vertical-align: middle;
+}
