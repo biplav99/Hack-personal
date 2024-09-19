@@ -19,11 +19,11 @@ const items = [
     src: "../src/assets/apple.svg",
     alt: "Apple"
   },
-  {
-    name: "BAC",
-    src: "../src/assets/bac.png",
-    alt: "BAC"
-  },
+  // {
+  //   name: "BAC",
+  //   src: "../src/assets/bac.png",
+  //   alt: "BAC"
+  // },
   {
     name: "Lululemon",
     src: "../src/assets/lululemon.png",
@@ -45,21 +45,23 @@ function Dashboard() {
   return (
     <FluentProvider theme={webLightTheme}>
       <div className="App">
-        <p className="getStarted">Connect an account</p>
+        {/* <p className="getStarted">Connect an account</p> */}
         <SearchBox
           contentBefore={<SearchRegular />}
-          placeholder="Search providers"
+          placeholder="Search"
           className="searchBox"
         />
         <p className="providers">All Providers</p>
         <table>
           {items.map((item) => (
+           <div className="content">
             <tr>
               <td>
-                <Image key={item.name} className="logo" src={item.src} alt={item.alt} />
+              <Image key={item.name} className="logo" src={item.src} alt={item.alt} />
               </td>
               <td>{item.name}</td>
             </tr>
+             </div>
           ))}
         </table>
       </div>
