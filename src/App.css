@@ -90,6 +90,16 @@ button.btnNewIssue {
   position: absolute;
   right: 20px;
   top: 20px;
+  border-radius: 25px !important;
+}
+.btnLgOut {
+  width: auto;
+  height: 28px;
+  position: absolute;
+  right: 18px;
+  top: 72px;
+  background: linear-gradient(to right, #7826A9, #2315CC);
+  padding: 0 5px;
 }
 .navigation {
   position: fixed;

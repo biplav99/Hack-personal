@@ -32,9 +32,6 @@ const MainContent = () => {
       })
       .catch((error) => console.log(error));
   };
-  const handleLogoutRedirect = () => {
-    instance.logoutRedirect().catch((error) => console.log(error));
-};
   return (
     <FluentProvider theme={webLightTheme}>
       <div className="App container">
@@ -43,11 +40,7 @@ const MainContent = () => {
             <Container>
               <Top />
             <div className="row">
-            <div className="col-sm-12 col-xs-12">
-                        <Button variant="warning" onClick={handleLogoutRedirect}>
-                            Sign out
-                        </Button>
-                    </div>
+
                     <Dashboard/>
             </div>  
             </Container>
