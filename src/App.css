@@ -93,13 +93,15 @@ button.btnNewIssue {
   border-radius: 25px !important;
 }
 .btnLgOut {
-  width: auto;
-  height: 28px;
+  width: 100px;
+  height: 38px;
+  z-index: 9;
   position: absolute;
   right: 18px;
   top: 72px;
   background: linear-gradient(to right, #7826A9, #2315CC);
   padding: 0 5px;
+  color: #fff;
 }
 .navigation {
   position: fixed;
