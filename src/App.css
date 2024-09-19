@@ -48,14 +48,15 @@
   text-align: center;
   font-size: 24px;
   font-weight: 500;
-  position: fixed;
+  /* position: fixed; */
   justify-content: center;
   align-items: center;
-  display: flex;
-  /* margin: auto; */
-  width: 60%;
-  top: 20px;
+  /* display: flex; */
+  margin: auto;
+  /* width: 60%; */
+  /* top: 30px; */
   color: black;
+  height: 100px;
 }
 button.btnNewIssue {
   background-image: linear-gradient(to right, #7826A9, #2315CC);
@@ -173,3 +174,43 @@ textarea{
 .fhz96rm {
   border: none !important;
 }
+/* table changes */
+table {
+  width: 100%;
+}
+
+.content {
+  background-color: #FFFFFF99;
+  border-radius: 30px;
+  box-shadow: 0px 1px 24px 0px #8DAFED1F;
+  margin-bottom: 10px;
+}
+
+tr td {
+  width: auto;
+}
+
+
+td img {
+  vertical-align: middle; /* Align the image vertically */
+  margin-right: 10px; /* Space between image and text */
+}
+
+.f1vdfbxk {
+  width: 396px;
+  height: 56px;
+  gap: 0px;
+  box-shadow: 0px 0px 2px 0px #627CDA66;
+  box-shadow: 0px 1px 24px 0px #8DAFED40;
+  border-radius: 4px;
+  padding: 8px 12px 8px 12px !important;
+}
+
+.App {
+  /* background-color: lightblue; */
+}
+
+.f1i3iumi {
+  background-color: transparent !important;
+}
+
