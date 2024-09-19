@@ -4,17 +4,13 @@ import './App.css';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { startTransition } from 'react';
-import {AuthenticatedTemplate, useMsal , UnauthenticatedTemplate} from '@azure/msal-react';
 
 interface ReceivedMsg {
   id: number;
   text: string;
 }
-let assistant_id = '', thread_id = '';
+let assistant_id = '', thread_id = '', intents = [], intent = '', orc_assistant_id = '', orc_thread_id = '', previous_intent='';
 const Chat: React.FC = () => {
-
-  const { instance } = useMsal();
-  const activeAccount = instance.getActiveAccount();
 
   const [messages, setMessages] = useState<{ id: number; text: string; isCustomer: boolean; }[]>([]);
   const [user_input, setNewMessage] = useState('');
@@ -36,13 +32,13 @@ const Chat: React.FC = () => {
       headers: { 'Content-Type': 'application/json' },
       data: {
         customer_assistant_id: (assistant_id != '') ? assistant_id : null,
-        orchestrator_assistant_id: null,
-        orchestrator_thread_id: null,
+        orchestrator_assistant_id: (assistant_id != '') ? orc_assistant_id : null,
+        orchestrator_thread_id: (assistant_id != '') ? orc_thread_id : null,
         customer_thread_id: (thread_id != '') ? thread_id : null,
         user_input: user_input.trim(),
-        intents: [],
-        intent: '',
-        previous_intent: ''
+        intents:(intents.length  > 0) ? intents : [],
+        intent:(assistant_id != '') ? intent : '',
+        previous_intent: (previous_intent != '') ? previous_intent : '',
       }
     };
 
@@ -51,6 +47,11 @@ const Chat: React.FC = () => {
       const receivedMsg: ReceivedMsg = response.data;
       assistant_id = response.data.customer_assistant_id;
       thread_id = response.data.customer_thread_id;
+      intents = response.data.intents;
+      intent = response.data.intent;
+      orc_assistant_id = response.data.orchestrator_assistant_id;
+      orc_thread_id = response.data.orchestrator_thread_id;
+      previous_intent = response.data.previous_intent;
       handleReceiveMessage(receivedMsg);
     }).catch((error) => {
       console.error(error);
