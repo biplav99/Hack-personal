@@ -1,13 +1,12 @@
 import { Image } from "@fluentui/react-components";
 import { useState } from 'react';
 import { Navigation24Filled } from "@fluentui/react-icons";
-import { AuthenticatedTemplate, UnauthenticatedTemplate, useMsal } from "@azure/msal-react";
-import { Container } from "react-bootstrap";
+import { AuthenticatedTemplate, useMsal } from "@azure/msal-react";
 
 
 function top() {
+  
   const { instance } = useMsal();
-
   const activeAccount = instance.getActiveAccount();
   const [showLogout, setShowLogout] = useState(false);
 
@@ -34,7 +33,9 @@ function top() {
                 style={{ cursor: 'pointer' }}
               />
               {showLogout && (
+                <div>
                 <button className="btnLgOut" onClick={handleLogout}>Logout</button>
+                </div>
               )}
             </div>
         ) : null}

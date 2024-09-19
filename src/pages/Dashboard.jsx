@@ -1,14 +1,17 @@
 import React, { useState } from "react";
-import { FluentProvider, webLightTheme } from "@fluentui/react-components";
+import { FluentProvider, webLightTheme, Button } from "@fluentui/react-components";
 import { SearchBox, Image } from "@fluentui/react-components";
 import { SearchRegular } from "@fluentui/react-icons";
+import { useNavigate } from 'react-router-dom';
+import { startTransition } from 'react';
+
 
 const items = [
   {
     name: "ATT",
     src: "../src/assets/att.svg",
     alt: "ATT"
-  },  
+  },
   {
     name: "SwiftRide",
     src: "../src/assets/logo-bike.svg",
@@ -39,6 +42,15 @@ const items = [
 ];
 
 function Dashboard() {
+  const navigate = useNavigate();
+  const handleGotoChat = () => {
+    startTransition(() => {
+      const path = `/chat`;
+      navigate(path);
+    })
+  };
+
+
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredItems, setFilteredItems] = useState(items);
 
@@ -59,20 +71,22 @@ function Dashboard() {
           contentBefore={<SearchRegular />}
           placeholder="Search"
           className="searchBox"
-          onChange={handleSearch} 
+          onChange={handleSearch}
           value={searchTerm}
         />
         <p className="providers">All Providers</p>
         <table>
-        {filteredItems.map((item) => (
-           <div className="content">
-            <tr>
-              <td>
-              <Image key={item.name} className="logo" src={item.src} alt={item.alt} />
-              </td>
-              <td>{item.name}</td>
-            </tr>
-             </div>
+          {filteredItems.map((item) => (
+            <div className="content">
+              <Button onClick={handleGotoChat}>
+                <tr>
+                  <td>
+                    <Image key={item.name} className="logo" src={item.src} alt={item.alt} />
+                  </td>
+                  <td>{item.name}</td>
+                </tr>
+              </Button>
+            </div>
           ))}
         </table>
       </div>

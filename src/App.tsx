@@ -1,26 +1,16 @@
 import "./App.css";
-import { lazy } from "react";
-import { BrowserRouter } from "react-router-dom";
 import Top from "./sections/top.tsx";
 import { AuthenticatedTemplate, MsalProvider, UnauthenticatedTemplate, useMsal } from "@azure/msal-react";
 import { Container, Button } from "react-bootstrap";
 import { loginRequest } from './authConfig';
-import { AddRegular } from "@fluentui/react-icons";
 import { FluentProvider, webLightTheme } from "@fluentui/react-components";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Chat from "./Chat.tsx";
-
-const Login = lazy(() => import("./pages/Login.jsx"));
-const Dashboard = lazy(() => import("./pages/Dashboard.jsx"));
-
+import Dashboard from './pages/Dashboard.jsx';
+import Login from './pages/Login.jsx'
 
 
 const MainContent = () => {
-  /**
-   * useMsal is hook that returns the PublicClientApplication instance,
-   * that tells you what msal is currently doing. For more, visit:
-   * https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-react/docs/hooks.md
-   */
+
   const { instance } = useMsal();
   const activeAccount = instance.getActiveAccount();
 
@@ -39,29 +29,23 @@ const MainContent = () => {
           {activeAccount ? (
             <Container>
               <Top />
-            <div className="row">
-              <Chat/>
-            </div>  
-              </Container>
+              <Dashboard />
+            </Container>
           ) : null}
         </AuthenticatedTemplate>
         <UnauthenticatedTemplate>
-          <BrowserRouter>  
           <Top />
-          </BrowserRouter>
           <div className="row loginwrapper">
             <p className="getStarted">Hi there!</p>
             <p className="welcome"> Welcome to STORES</p>
           </div>
           <div className="row">
-          <Button shape="circular" size="large"className="btnNewIssue" onClick={handleRedirect}>
-             Get Started </Button>
+            <Button shape="circular" size="large" className="btnNewIssue" onClick={handleRedirect}>
+              Get Started </Button>
           </div>
-          <BrowserRouter>
-            <div className="MainContainer">
-              <Login />
-            </div>
-          </BrowserRouter>
+          <div className="MainContainer">
+            <Login />
+          </div>
         </UnauthenticatedTemplate>
       </div>
     </FluentProvider>
@@ -69,13 +53,6 @@ const MainContent = () => {
 };
 
 
-/**
-* msal-react is built on the React context API and all parts of your app that require authentication must be 
-* wrapped in the MsalProvider component. You will first need to initialize an instance of PublicClientApplication 
-* then pass this to MsalProvider as a prop. All components underneath MsalProvider will have access to the 
-* PublicClientApplication instance via context as well as all hooks and components provided by msal-react. For more, visit:
-* https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-react/docs/getting-started.md
-*/
 const App = ({ instance }) => {
   return (
     <MsalProvider instance={instance}>
