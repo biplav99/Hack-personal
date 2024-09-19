@@ -20,18 +20,14 @@ function top() {
     console.log('User logged out!');
   }
   return (
-    <div className="topSection">
-      <Navigation24Filled className="navigation" />
-      <header className="App-header">
-        <p>Unified Support</p>
-      </header>
-      <UnauthenticatedTemplate>
-        <Image alt="Erik Nason" src="../src/assets/ErikNason.jpg" className="headerlogo" />
-      </UnauthenticatedTemplate>
+    <div className="topSection conatainer">
+      <div className="row">
+        <div className="col-2 nav-logo"><Navigation24Filled className="navigation" /></div>
+        <div className="col-7 brandname">Unified Support</div>
+      </div>
       <AuthenticatedTemplate>
         {activeAccount ? (
-          <Container>
-            <div>
+            <div className="col-3">
               <Image alt="Erik Nason" className="headerlogo"
                 src="../src/assets/ErikNason.jpg"
                 onClick={handleAvatarClick}
@@ -41,7 +37,6 @@ function top() {
                 <button className="btnLgOut" onClick={handleLogout}>Logout</button>
               )}
             </div>
-          </Container>
         ) : null}
       </AuthenticatedTemplate>
 
