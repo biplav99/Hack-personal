@@ -40,8 +40,7 @@ const MainContent = () => {
             <Container>
               <Top />
             <div className="row">
-
-                    <Dashboard/>
+              <Chat/>
             </div>  
             </Container>
           ) : null}

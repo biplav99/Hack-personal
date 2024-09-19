@@ -154,6 +154,13 @@ button.btnNewIssue {
   padding: 12px;
   border-radius: 20px 20px 20px 0px;
 }
+.agent-message {
+  margin-bottom: 15px;
+  background: #F4F6FD;
+  color: #242424;
+  padding: 12px;
+  border-radius: 20px 20px 20px 0px;
+}
 
 .send-button {
   align-self: flex-end;
