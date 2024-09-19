@@ -47,6 +47,7 @@ const Chat: React.FC = () => {
       assistant_id = response.data.customer_assistant_id;
       thread_id = response.data.customer_thread_id;
       setNewRcvMessage('');
+      setShowAvatar(true);
     }).catch(function (error) {
       console.error(error);
     });
@@ -56,7 +57,7 @@ const Chat: React.FC = () => {
       { id: Date.now(), text: user_input },
     ]);
     setNewMessage('');
-    setShowAvatar(true);
+   
   };
 
   const handleKeyPress = (event: KeyboardEvent<HTMLTextAreaElement>) => {
@@ -69,19 +70,32 @@ const Chat: React.FC = () => {
   return (
     <FluentProvider theme={webLightTheme}>
       <div className="chat-container container">
-        <div className='row'>
-          <div className="chat-header col-lg-4 col-sm-12 col-xs-12">Chat header</div>
+        <div className='row chat-header'>
+           <div className='col-1'>
+            <Avatar name="brand avatar" image={{ src: "../src/assets/ArrowLeft.svg", }} />
+           </div>
+          <div className='col-1 chat-ico'>
+            <Avatar name="brand avatar" image={{ src: "../src/assets/logo-bike.svg", }} />
+          </div>
+          <div className="col-9 chat-title">Constonso Enterprises</div>
         </div>
-        <div className="message-list row">
-          {showAvatar && (
-            <div className='col-2'> <Avatar name="brand avatar" image={{ src: "../src/assets/att.svg", }} /> </div>
-          )}
-          <div className='col-10'>
-            {messages.map(message => (
-              <div key={message.id} className="customer-message">
-                {message.text}
-              </div>
-            ))}
+        <div className="message-list ">
+          <div className='row'>
+            <div className='col-2'></div>
+            <div className='col-10'>
+              {messages.map(message => (
+                <div key={message.id} className="customer-message">
+                  {message.text}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+        <div className='agentmsg row'>
+          <div className='agentmsg-ico col-1'> 
+            {showAvatar && (
+            <Avatar name="brand avatar" image={{ src: "../src/assets/logo-bike.svg", }} />
+            )}
           </div>
           <div className='col-10'>
             {receiveMsgs.map(receiveMsg => (
