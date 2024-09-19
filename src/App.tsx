@@ -40,34 +40,28 @@ const MainContent = () => {
             <Container>
               <Top />
             <div className="row">
-
-                    <Dashboard/>
+              <Dashboard/>
             </div>  
-            </Container>
+              </Container>
           ) : null}
         </AuthenticatedTemplate>
         <UnauthenticatedTemplate>
+          <BrowserRouter>  
+          <Top />
+          </BrowserRouter>
+          <div className="row loginwrapper">
+            <p className="getStarted">Hi there!</p>
+            <p className="welcome"> Welcome to STORES</p>
+          </div>
+          <div className="row">
+          <Button shape="circular" size="large"className="btnNewIssue" onClick={handleRedirect}>
+             Get Started </Button>
+          </div>
           <BrowserRouter>
-            <div className="TopContainer">
-              <Top />
-            </div>
             <div className="MainContainer">
               <Login />
             </div>
           </BrowserRouter>
-          <p className="getStarted">Get Started</p>
-          <p className="welcome">
-            Welcome to the Unified Support App. Simply click "New Issue" to get
-            started
-          </p>
-          <Button
-            shape="circular"
-            size="large"
-            className="btnNewIssue"
-            onClick={handleRedirect}
-          >
-           <AddRegular /> New Issue
-          </Button>
         </UnauthenticatedTemplate>
       </div>
     </FluentProvider>
