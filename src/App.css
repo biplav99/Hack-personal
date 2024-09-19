@@ -5,7 +5,7 @@
 }
 
 .App {
-  background: linear-gradient(171.28deg, #F4F3F5 5.08%, #ECF0F5 92.18%);
+  /* background: linear-gradient(171.28deg, #F4F3F5 5.08%, #ECF0F5 92.18%); */
 }
 
 .logo {
@@ -117,16 +117,20 @@ button.btnNewIssue {
   width: 100%;
 }
 .chat-container {
-  display: flex;
-  flex-direction: column;
+  position: fixed;
+  padding: 20px;
+  top: 100px;
+  left: 0px;
+  height: 100%;
   width: 100%;
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 16px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  background-color: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background: #ffffff;
+}
+.chat-wrapper {
+  position: relative;
+  padding: 0px;
+}
+#root {
+  padding: 0px;
 }
 
 .chat-header {
@@ -140,14 +144,30 @@ button.btnNewIssue {
   overflow-y: auto;
   padding-bottom: 8px;
   margin-bottom: 8px;
-  border-bottom: 1px solid #ddd;
 }
 
 .customer-message {
-  margin-bottom: 8px;
+  margin-bottom: 15px;
+  background: #F4F6FD;
+  color: #242424;
+  padding: 12px;
+  border-radius: 20px 20px 20px 0px;
 }
 
 .send-button {
   align-self: flex-end;
   margin-top: 8px;
+}
+.send-box-wrapper {
+  position: absolute;
+  bottom: 110px;
+  margin: 0;
+  padding: 0px;
+}
+textarea{
+  box-shadow: 0px 1px 24px 0px rgba(141, 175, 237, 0.25), 0px 0px 2px 0px rgba(98, 124, 218, 0.40);
+  border-radius: 20px;
+}
+.fhz96rm {
+  border: none !important;
 }

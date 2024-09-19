@@ -7,6 +7,7 @@ import { Container, Button } from "react-bootstrap";
 import { loginRequest } from './authConfig';
 import { AddRegular } from "@fluentui/react-icons";
 import { FluentProvider, webLightTheme } from "@fluentui/react-components";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Chat from "./Chat.tsx";
 
 const Login = lazy(() => import("./pages/Login.jsx"));
@@ -33,12 +34,15 @@ const MainContent = () => {
   };
   return (
     <FluentProvider theme={webLightTheme}>
-      <div className="App">
+      <div className="App container">
         <AuthenticatedTemplate>
           {activeAccount ? (
             <Container>
               <Top />
-              <Chat />
+            <div className="row">
+
+                    <Dashboard/>
+            </div>  
             </Container>
           ) : null}
         </AuthenticatedTemplate>
