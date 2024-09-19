@@ -22,7 +22,7 @@ function top() {
     <div className="topSection conatainer">
       <div className="row">
         <div className="col-2 nav-logo"><Navigation24Filled className="navigation" /></div>
-        <div className="col-7 brandname">Unified Support</div>
+        <div className="col-7 brandname">STORES</div>
       </div>
       <AuthenticatedTemplate>
         {activeAccount ? (
