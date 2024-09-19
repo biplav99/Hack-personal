@@ -31,9 +31,6 @@ const MainContent = () => {
       })
       .catch((error) => console.log(error));
   };
-  const handleLogoutRedirect = () => {
-    instance.logoutRedirect().catch((error) => console.log(error));
-};
   return (
     <FluentProvider theme={webLightTheme}>
       <div className="App">
@@ -41,13 +38,7 @@ const MainContent = () => {
           {activeAccount ? (
             <Container>
               <Top />
-              <div className="collapse navbar-collapse justify-content-end">
-                        <Button variant="warning" onClick={handleLogoutRedirect}>
-                            Sign out
-                        </Button>
-                    </div>
-                    <Dashboard/>
-                    <Chat/>
+              <Chat />
             </Container>
           ) : null}
         </AuthenticatedTemplate>
