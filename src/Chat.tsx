@@ -105,8 +105,8 @@ const Chat: React.FC = () => {
           <div className="messages">
             {messages.map((message) => (
               <div key={message.id} className='row'>
-              <div className="timestamp">
-                <div className='col float-end'>{message.timestamp}</div>
+              <div className='timestamp'>
+                <div className={`col ${message.isCustomer ? 'float-end' : 'float-start aligts'}`}>{message.timestamp}</div>
               </div>
               {!message.isCustomer && (
                 <div className='col-1 mt15'>
