@@ -4,8 +4,8 @@
   width: 100%;
 }
 
-.App {
-  /* background: linear-gradient(171.28deg, #F4F3F5 5.08%, #ECF0F5 92.18%); */
+.fui-FluentProvider .App {
+  margin-top: 100px;
 }
 
 .logo {
@@ -287,7 +287,7 @@ p.providers{
   width: 90%;
   border-bottom: 0px;
   position: fixed;
-  top: 90px;
+  top: 140px;
 }
 .App table tr td:nth-child(2){
   font-size: 20px;
@@ -348,4 +348,7 @@ p.providers{
 }
 .mt15{
   margin-top: 15px !important;
+}
+.r1oeeo9n::after{
+  display: none;
 }
