@@ -326,6 +326,7 @@ p.providers{
   width: 35px;
   top: -5px;
     position: relative;
+    border-radius: 18px !important;
 }
 .call-btn, .vc-btn{
   min-width: 30px !important;
