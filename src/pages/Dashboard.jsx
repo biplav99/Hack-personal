@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FluentProvider, webLightTheme, Button } from "@fluentui/react-components";
 import { SearchBox, Image } from "@fluentui/react-components";
-import { SearchRegular } from "@fluentui/react-icons";
+import { SearchRegular, AddRegular, HomeRegular, SettingsRegular } from "@fluentui/react-icons";
 import { useNavigate } from 'react-router-dom';
 import { startTransition } from 'react';
 
@@ -43,6 +43,7 @@ const items = [
 
 function Dashboard() {
   const navigate = useNavigate();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);  // For floating button animation
   const handleGotoChat = () => {
     startTransition(() => {
       const path = `/chat`;
@@ -53,7 +54,9 @@ function Dashboard() {
 
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredItems, setFilteredItems] = useState(items);
-
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
   const handleSearch = (event) => {
     const searchValue = event.target.value.toLowerCase();
     setSearchTerm(searchValue);
@@ -89,6 +92,17 @@ function Dashboard() {
             </div>
           ))}
         </table>
+        <div className={`floating-container ${isMenuOpen ? 'menu-open' : ''}`}>
+          <button className="floating-button" onClick={toggleMenu}>{<AddRegular />}</button>
+          <div className="floating-icons">
+            <button className="icon-button">
+              <HomeRegular />
+            </button>
+            <button className="icon-button">
+              <SettingsRegular />
+            </button>
+          </div>
+        </div>
       </div>
     </FluentProvider>
   );

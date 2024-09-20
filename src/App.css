@@ -352,6 +352,85 @@ p.providers{
 .r1oeeo9n::after{
   display: none;
 }
+
+
+/* ***************************** */
+/* Floating button container */
+.floating-container {
+  position: fixed;
+  bottom: 40px;
+  right: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Floating action button */
+.floating-button {
+  background-color: #783EFF;
+  color: #ffffff;
+  border: none;
+  border-radius: 50%;
+  padding: 20px;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  box-shadow: 0px 8px 32px 0px #783EFF80;
+}
+.floating-button svg{
+  height: 32px;
+  width: 32px;
+  stroke-width: 1px;
+  fill: #ffffff;
+  stroke: #ffffff;
+}
+.floating-button:focus {
+  outline: none;
+}
+
+/* Menu with icons */
+.floating-icons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute; /* So icons are positioned above the button */
+  bottom: 80px; /* Adjust to position icons above the button */
+  opacity: 0; /* Initially hidden */
+  transition: all 0.3s ease;
+  pointer-events: none; /* Disable click when menu is hidden */
+}
+
+/* Make the icons visible when menu is open */
+.floating-container.menu-open .floating-icons {
+  opacity: 1; /* Show the icons */
+  pointer-events: all; /* Enable click for icons */
+}
+
+/* Icon button styles */
+.icon-button {
+  background-color: #783EFF;
+  color: #ffffff;
+  border: none;
+  border-radius: 50%;
+  padding: 15px;
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+.icon-button svg{
+  stroke: #ffffff;
+}
+
+.icon-button:active {
+  background-color: #3700b3;
+}
 .timestamp {
   color: #8B96B6;
   font-size: 12px;
