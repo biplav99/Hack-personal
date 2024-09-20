@@ -4,8 +4,8 @@
   width: 100%;
 }
 
-.App {
-  /* background: linear-gradient(171.28deg, #F4F3F5 5.08%, #ECF0F5 92.18%); */
+.fui-FluentProvider .App {
+  margin-top: 100px;
 }
 
 .logo {
@@ -98,8 +98,8 @@ button.btnNewIssue {
   height: 38px;
   z-index: 9;
   position: absolute;
-  right: 18px;
-  top: 72px;
+  right: 30px;
+  top: 55px;
   background: linear-gradient(to right, #7826A9, #2315CC);
   padding: 0 5px;
   color: #fff;
@@ -287,7 +287,7 @@ p.providers{
   width: 90%;
   border-bottom: 0px;
   position: fixed;
-  top: 90px;
+  top: 140px;
 }
 .App table tr td:nth-child(2){
   font-size: 20px;
@@ -349,10 +349,16 @@ p.providers{
 .mt15{
   margin-top: 15px !important;
 }
+.r1oeeo9n::after{
+  display: none;
+}
 .timestamp {
   color: #8B96B6;
   font-size: 12px;
 }
 .aligts {
   margin-left: 45px;
+}
+.f1xhbsuh::after {
+  display: none;
 }
