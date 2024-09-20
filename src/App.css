@@ -135,9 +135,11 @@ button.btnNewIssue {
   margin-bottom: 20px;
 }
 .chat-title {
-  padding: 5px 0px 0px 20px;
+  padding-right: 0 !important;
+  padding-left: 10px !important;
+  padding-top: 5px !important;
   font-size: 18px;
-  margin-left: 5px;
+  margin-left: 0px !important;
 }
 .message-list {
   flex: 1;
@@ -145,7 +147,8 @@ button.btnNewIssue {
   margin-bottom: 8px;
 }
 .chat-ico {
-  margin-left: 0px;
+  margin-left: 6px;
+  padding: 0px !important;
 }
 
 .customer-message {
@@ -316,6 +319,27 @@ p.providers{
   right: 70px;
   bottom: 10px;
 }
+.backDash {
+  min-width: auto !important;
+  padding: 0 20px !important;
+}
+.callImg, .vcImg{
+  height: 35px;
+  width: 35px;
+    position: relative;
+    border-radius: 18px !important;
+}
+.call-btn, .vc-btn{
+  min-width: 30px !important;
+  width: 35px !important; 
+  margin: 0 10px 0 0 !important;
+}
+.call-vc{
+  display: flex;
+  justify-content: center;
+  margin-left: 15px !important;
+}
+
 .send-button img{
   background-color: transparent !important;
 }
