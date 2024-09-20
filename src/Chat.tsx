@@ -81,11 +81,11 @@ const Chat: React.FC = () => {
         <div className='row chat-header'>
           <div className='col-2'>
             <Button className='backDash' onClick={handleGotoDashboard}>
-              <Avatar name="brand avatar" image={{ src: "../src/assets/ArrowLeft.svg", }} />
+              <Avatar image={{ src: "../src/assets/ArrowLeft.svg", }} />
             </Button>
           </div>
           <div className='col-1 chat-ico'>
-            <Avatar name="brand avatar" image={{ src: "../src/assets/logo-bike.svg", }} />
+            <Avatar image={{ src: "../src/assets/logo-bike.svg", }} />
           </div>
           <div className="col-5 chat-title">SwiftRide Enterprises</div>
           <div className='col-3 call-vc'>
@@ -109,13 +109,13 @@ const Chat: React.FC = () => {
         <div className='send-box-wrapper row'>
           <div className='col-11'>
             <Field size="small">
-              <Textarea placeholder="Type a message..." value={user_input} onChange={handleMessageChange}
+              <Textarea placeholder="Type your message" value={user_input} onChange={handleMessageChange}
                 onKeyDown={handleKeyPress} rows={2} />
             </Field>
           </div>
           <div className='col-1 send-button'>
             <Button className="" onClick={handleSendMessage}>
-              <Avatar name="brand avatar" image={{ src: "../src/assets/Iconsend.png", }} />
+                          <Avatar image={{ src: "../src/assets/Iconsend.png", }} />
             </Button>
           </div>
         </div>
