@@ -98,8 +98,8 @@ button.btnNewIssue {
   height: 38px;
   z-index: 9;
   position: absolute;
-  right: 18px;
-  top: 72px;
+  right: 30px;
+  top: 55px;
   background: linear-gradient(to right, #7826A9, #2315CC);
   padding: 0 5px;
   color: #fff;
@@ -350,5 +350,15 @@ p.providers{
   margin-top: 15px !important;
 }
 .r1oeeo9n::after{
+  display: none;
+}
+.timestamp {
+  color: #8B96B6;
+  font-size: 12px;
+}
+.aligts {
+  margin-left: 45px;
+}
+.f1xhbsuh::after {
   display: none;
 }
