@@ -12,7 +12,7 @@ interface ReceivedMsg {
 let assistant_id = '', thread_id = '', intents = [], intent = '', orc_assistant_id = '', orc_thread_id = '', previous_intent = '';
 const Chat: React.FC = () => {
 
-  const [messages, setMessages] = useState<{ id: number; text: string; isCustomer: boolean; }[]>([]);
+  const [messages, setMessages] = useState<{ id: number; text: string; isCustomer: boolean; timestamp: string}[]>([]);
   const [user_input, setNewMessage] = useState('');
 
   const handleMessageChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
@@ -22,7 +22,7 @@ const Chat: React.FC = () => {
   const handleSendMessage = () => {
     if (user_input.trim() === '') return;
 
-    const newMessage = { id: messages.length + 1, text: user_input, isCustomer: true };
+    const newMessage = { id: messages.length + 1, text: user_input, isCustomer: true,timestamp: new Date().toLocaleTimeString() };
     setMessages([...messages, newMessage]);
     setNewMessage('');
 
@@ -59,7 +59,7 @@ const Chat: React.FC = () => {
   };
 
   const handleReceiveMessage = (receivedMsg: ReceivedMsg) => {
-    const newMessage = { id: messages.length + 1, text: receivedMsg.customerResponse, isCustomer: false };
+    const newMessage = { id: messages.length + 1, text: receivedMsg.customerResponse, isCustomer: false,timestamp: new Date().toLocaleTimeString() };
     setMessages((prev) => [...prev, newMessage]);
   };
   const handleKeyPress = (event: KeyboardEvent<HTMLTextAreaElement>) => {
@@ -98,11 +98,25 @@ const Chat: React.FC = () => {
           </div>
         </div>
         <div className="message-list ">
+        <div className='row'>
+          <div className='col-1 mt15'><Avatar image={{ src: "../src/assets/logo-bike.svg", }} /></div>
+          <div className='col agent-message'>Welcome to our store! Please let us know if there is anything we can do for you!</div>
+        </div>
           <div className="messages">
             {messages.map((message) => (
-              <div key={message.id} className={message.isCustomer ? 'customer-message' : 'agent-message'}>
+              <div key={message.id} className='row'>
+              <div className="timestamp">
+                <div className='col float-end'>{message.timestamp}</div>
+              </div>
+              {!message.isCustomer && (
+                <div className='col-1 mt15'>
+                  <Avatar image={{ src: "../src/assets/logo-bike.svg" }} />
+                </div>
+              )}
+              <div className={`col ${message.isCustomer ? 'customer-message' : 'agent-message'}`}>
                 <span>{message.text}</span>
               </div>
+            </div>
             ))}
           </div>
         </div>
