@@ -1,5 +1,5 @@
 import React, { useState, ChangeEvent, KeyboardEvent } from 'react';
-import { FluentProvider, webLightTheme, Button, Textarea, Field, Avatar } from '@fluentui/react-components';
+import { FluentProvider, webLightTheme, Button, Textarea, Field, Avatar, Image } from '@fluentui/react-components';
 import './App.css';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
@@ -9,7 +9,7 @@ interface ReceivedMsg {
   id: number;
   text: string;
 }
-let assistant_id = '', thread_id = '', intents = [], intent = '', orc_assistant_id = '', orc_thread_id = '', previous_intent='';
+let assistant_id = '', thread_id = '', intents = [], intent = '', orc_assistant_id = '', orc_thread_id = '', previous_intent = '';
 const Chat: React.FC = () => {
 
   const [messages, setMessages] = useState<{ id: number; text: string; isCustomer: boolean; }[]>([]);
@@ -36,8 +36,8 @@ const Chat: React.FC = () => {
         orchestrator_thread_id: (assistant_id != '') ? orc_thread_id : null,
         customer_thread_id: (thread_id != '') ? thread_id : null,
         user_input: user_input.trim(),
-        intents:(intents.length  > 0) ? intents : [],
-        intent:(assistant_id != '') ? intent : '',
+        intents: (intents.length > 0) ? intents : [],
+        intent: (assistant_id != '') ? intent : '',
         previous_intent: (previous_intent != '') ? previous_intent : '',
       }
     };
@@ -80,14 +80,22 @@ const Chat: React.FC = () => {
       <div className="chat-container container">
         <div className='row chat-header'>
           <div className='col-2'>
-            <Button onClick={handleGotoDashboard}>
+            <Button className='backDash' onClick={handleGotoDashboard}>
               <Avatar name="brand avatar" image={{ src: "../src/assets/ArrowLeft.svg", }} />
             </Button>
           </div>
           <div className='col-1 chat-ico'>
             <Avatar name="brand avatar" image={{ src: "../src/assets/logo-bike.svg", }} />
           </div>
-          <div className="col-8 chat-title">SwiftRide Enterprises</div>
+          <div className="col-5 chat-title">SwiftRide Enterprises</div>
+          <div className='col-3 call-vc'>
+            <Button className="col-6 call-btn">
+              <Image alt="ATT" src="../src/assets/call.svg" className="callImg" />
+            </Button>
+            <Button className="col-6 vc-btn">
+              <Image alt="ATT" src="../src/assets/video.svg" className="vcImg" />
+            </Button>
+          </div>
         </div>
         <div className="message-list ">
           <div className="messages">
@@ -107,7 +115,7 @@ const Chat: React.FC = () => {
           </div>
           <div className='col-1 send-button'>
             <Button className="" onClick={handleSendMessage}>
-            <Avatar name="brand avatar" image={{ src: "../src/assets/Iconsend.png", }} />
+              <Avatar name="brand avatar" image={{ src: "../src/assets/Iconsend.png", }} />
             </Button>
           </div>
         </div>
