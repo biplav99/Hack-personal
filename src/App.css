@@ -145,7 +145,7 @@ button.btnNewIssue {
   margin-bottom: 8px;
 }
 .chat-ico {
-  margin-left: 6px;
+  margin-left: 0px;
 }
 
 .customer-message {
@@ -185,6 +185,9 @@ button.btnNewIssue {
 .send-box-wrapper textarea {
   height: 50px;
   width: 25rem;
+  padding-top: 17px;
+  padding-left: 15px;
+  font-size: 16px;
 }
 textarea{
   box-shadow: 0px 1px 24px 0px rgba(141, 175, 237, 0.25), 0px 0px 2px 0px rgba(98, 124, 218, 0.40);
@@ -303,8 +306,17 @@ p.providers{
   padding: 0px;
   margin-left: -10px;
 }
+.chat-header img {
+  background-color: #F4F6FD;
+}
 .send-button {
   position: absolute;
   right: 70px;
   bottom: 10px;
+}
+.send-button img{
+  background-color: transparent !important;
+}
+.send-box-wrapper textarea:focus{
+  border-color: transparent;
 }
