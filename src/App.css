@@ -349,3 +349,10 @@ p.providers{
 .mt15{
   margin-top: 15px !important;
 }
+.timestamp {
+  color: #8B96B6;
+  font-size: 12px;
+}
+.aligts {
+  margin-left: 45px;
+}
